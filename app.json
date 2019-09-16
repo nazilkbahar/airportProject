@@ -1,0 +1,6 @@
+{
+  "name": "Java Sample",
+  "description": "Java application",
+  "repository": "https://github.com/nazilkbahar/airportProject",
+  "keywords": ["java", "spring", "spring boot"]
+}
