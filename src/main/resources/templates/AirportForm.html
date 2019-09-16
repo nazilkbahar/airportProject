@@ -1,0 +1,86 @@
+<!DOCTYPE html>  
+<html>  
+	
+	<head>
+		<title>naz</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		     <link href = "/bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+		
+		<script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+		
+		<script type="text/javascript" th:src="@{/js/test.js}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	
+	
+	<body>
+	
+		<!-- text veri gir ve butona tıkla -->     
+		       
+		<form class="form-horizontal" id="kullaniciForm">
+		 
+			<p> Aranacak veriyi giriniz</p>
+			<p class="inputNameArea">Name: <input type="text" id="inputValue"></p>
+			
+			
+			<button type="button" id="searchButton" class="cool-button">
+				<span>Veri Getir</span>
+			</button>
+         
+		</form>
+		
+		<h1>AIRPORT INFORMATION</h1>
+		<!-- border tablo yapar -->
+		<table id="airportTable" border="1">
+		        <thead>
+		        <!-- sola hizalar -->
+		          <tr align="left">
+					  <th>ID</th>     
+					  <th>NAME</th>
+					  <th>CITY</th>
+					  <th>COUNTRY</th>
+					  <th>CODE</th>
+					  <th>LATITUDE</th>
+					  <th>LONGTITUDE</th>
+		          </tr>
+		          </thead>
+		          
+		          <tbody>
+		               <tr th:each="air : ${modelAirportList}">  <!-- $ bununlwa controllere erisiyorsun -->
+							
+						   	<td th:text="${air.id}"></td>
+							<td class="airport-name" th:text="${air.name}" th:attr="data-update=${air.id}"></td> 
+							<td th:text="${air.city}"></td>
+							<td th:text="${air.country}"></td>
+							<td th:text="${air.code}"></td>
+							<td th:text="${air.latitude}"></td>
+							<td th:text="${air.longitude}"></td>
+							<td><button class="deleteButton cool-button" th:attr="data-button=${air.id}">Delete</button></td>   
+						
+					    </tr>	  
+					    
+					  
+					  	 
+				</tbody>
+		         
+		</table>
+		
+      
+         <ul id="pagin">        <!-- pagination -->
+         	<li class="page-numbers" th:each="number:${#numbers.sequence(1,totalPage+1)}">
+         		<a class="current" th:text="${number}" th:href="@{'/AirportForm?page='+${number}}"></a>
+         	</li>
+         
+    	</ul>
+ 
+   
+         </tr>
+        
+         </div>    
+         
+         
+	</body>
+</html>
