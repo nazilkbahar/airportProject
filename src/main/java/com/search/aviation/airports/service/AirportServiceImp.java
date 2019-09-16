@@ -29,8 +29,8 @@ public class AirportServiceImp implements AirportService{
 		
 		
 		String airportLine = "11844,\"Brunswick Executive Airport\",\"Brunswick\",\"United States\",\"NHZ\",\"KNHZ\",43.89220047,-69.93859863,72,\\N,\\N,\\N,\"airport\",\"OurAirports\""; //deneme
-		ModelAirport modelAirport = createAirportFromLine(airportLine);
-		airportList = new ArrayList<ModelAirport>();
+		ModelAirport modelAirport = AirportHelper.createAirportFromLine(airportLine);
+		airportList=new ArrayList<>();
 		airportList.add(modelAirport);
 		//airportList = AirportHelper.createAirportList(entityy.getBody());
 		
