@@ -25,15 +25,14 @@ public class AirportServiceImp implements AirportService{
 		//ResponseEntity<String> entity =  template.getForEntity("http://10.26.12.227:3002/airports.dat", String.class);
 		//System.out.println(entity.getBody());
 
-		ResponseEntity<String> entityy =  template.getForEntity("http://10.26.12.227:3002/airportsmini.dat", String.class);
-		//ResponseEntity<ServiceResponse> entity2=template.getForEntity("https://sit.turkishairlines.com/com.thy.web.online.cms/cms/newmodule/getnewmodulestatus",ServiceResponse.class);
-	    //ServiceResponse response = entity2.getBody();
-		//System.out.println(response.toString());
+		//ResponseEntity<String> entityy =  template.getForEntity("http://10.26.12.227:3002/airportsmini.dat", String.class);
 		
-		//String airportLine = "11844,\"Brunswick Executive Airport\",\"Brunswick\",\"United States\",\"NHZ\",\"KNHZ\",43.89220047,-69.93859863,72,\\N,\\N,\\N,\"airport\",\"OurAirports\""; //deneme
-		//ModelAirport modelAirport = createAirportFromLine(airportLine);
 		
-		airportList = AirportHelper.createAirportList(entityy.getBody());
+		String airportLine = "11844,\"Brunswick Executive Airport\",\"Brunswick\",\"United States\",\"NHZ\",\"KNHZ\",43.89220047,-69.93859863,72,\\N,\\N,\\N,\"airport\",\"OurAirports\""; //deneme
+		ModelAirport modelAirport = createAirportFromLine(airportLine);
+		airportList = new ArrayList<ModelAirport>();
+		airportList.add(modelAirport);
+		//airportList = AirportHelper.createAirportList(entityy.getBody());
 		
 	}
 	
