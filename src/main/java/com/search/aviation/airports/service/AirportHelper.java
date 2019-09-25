@@ -30,8 +30,6 @@ public class AirportHelper {
 	
 	public static String deleteTirnak(String line){
 		
-		ArrayList<ModelAirport> liste=new ArrayList<>();
-		
 		String tirnak="\"";
 		String bosluk="";
 		line=line.replace(tirnak, bosluk);
