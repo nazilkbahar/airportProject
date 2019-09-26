@@ -57,7 +57,7 @@ public class AirportServiceImp implements AirportService{
 		
 			ModelAirport t=airportList.get(i);
 			
-			if(t.getId().equals(""+id)){
+			if(t.getId().equals(""+id)){        //id'lerine e gore 
 				t.setName(airport.getName());
 				airportList.set(i, t);
 				return true;
