@@ -27,16 +27,13 @@ $(document).ready(function() {
 		                        '</td><td>' + item.latitude +
 		                        '</td><td>' + item.longitude +
 		                        '</td></tr>'
-		                    )
-					
-				});
-						
+		                    )	
+				});			
 			},
 			error:function()
 			{
 				alert('error');
-			}
-				
+			}		
 		});
 	});
 	
@@ -45,7 +42,6 @@ $(document).ready(function() {
 	}, function() {
 	    $(this).removeClass('selected');     //uzerinde degilse selected class ini kaldir
 	});
-	
 	
 	//for delete
 	$('.deleteButton').click(function() {              
@@ -97,26 +93,14 @@ $(document).ready(function() {
 			    },
 			    error: function() {
 				alert('fail update')
-			    }    	
-			    
+			    }    		    
 		})
 			
 		}
 		else {
 			alert('Name alanı bos olamaz!')
 		}
-
-		
-	
-		
-	})
-	
-
-	
-	
-	
-	
-	
+	})	
 });
 
 
